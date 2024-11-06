@@ -1,0 +1,39 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import '@fontsource/open-sans';
+---
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Astro V5 Template</title>
+	<ClientRouter />
+</head>
+<body>
+<header>
+	<nav>
+		<ul style="display: flex; gap: 1rem; list-style: none;">
+			<li><a href="/" style="color: #007bff; text-decoration: none;">Home</a></li>
+			<li><a href="/blog" style="color: #007bff; text-decoration: none;">Blog</a></li>
+			<li><a href="/data-fetching" style="color: #007bff; text-decoration: none;">Data Fetching</a></li>
+			<li><a href="/api/greeting" style="color: #007bff; text-decoration: none;">Internal API</a></li>
+			<li><a href="/server-island" style="color: #007bff; text-decoration: none;">Server Island</a></li>
+		</ul>
+	</nav>
+</header>
+<main transition:animate="slide">
+	<slot />
+</main>
+<footer>
+	<p>&copy; 2024 Astro V5 Template</p>
+</footer>
+</body>
+</html>
+
+<style>
+	@import '@picocss/pico/css/pico.css';
+	body {
+		font-family: 'Open Sans', sans-serif;
+		padding: 30px;
+	}
+</style>
